@@ -1,0 +1,125 @@
+@keyframes flip-cover {
+  100% {
+    transform: rotateY(90deg);
+  }
+}
+@keyframes flip-card {
+  100% {
+    transform: rotateY(0deg);
+  }
+}
+* {
+  font-family: "Roboto";
+}
+
+main button {
+  cursor: pointer;
+}
+main #time {
+  text-align: center;
+  width: 29em;
+  background-color: #e6acff;
+}
+main #time h1 {
+  padding: 0.5em;
+}
+main #time table {
+  width: 100%;
+}
+main #time table thead th td {
+  text-align: center;
+  padding: 0.5em;
+}
+main #time table tbody tr td {
+  text-align: center;
+  padding: 0.5em;
+}
+main #timer {
+  width: 29em;
+  height: 2em;
+  margin: 1em 0;
+  background-color: #cecece;
+}
+main #timer__bar {
+  height: 2em;
+  width: 0%;
+  background-color: red;
+}
+main #scene {
+  display: flex;
+  flex-flow: row wrap;
+  width: 27em;
+  gap: 0.5em;
+  background-color: #dddcfc;
+  padding: 1em;
+  justify-content: space-between;
+}
+main #scene .card {
+  position: relative;
+  width: 4em;
+  height: 4em;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main #scene .card:before {
+  content: "";
+  width: 4em;
+  height: 4em;
+  position: absolute;
+  transform: rotateY(90deg);
+  background-size: 100% auto;
+  background-image: url(../img/cards.png);
+}
+main #scene .card:after {
+  content: "";
+  width: 4em;
+  height: 4em;
+  position: absolute;
+  background-color: #848484;
+}
+main #scene .card.flip:before {
+  animation: flip-card 1s forwards 0.5s;
+}
+main #scene .card.flip:after {
+  animation: flip-cover 0.5s forwards;
+}
+main #scene .card[data-value="0"]::before {
+  background-position: 0em 0em;
+}
+main #scene .card[data-value="1"]::before {
+  background-position: 0em 4em;
+}
+main #scene .card[data-value="2"]::before {
+  background-position: 0em 8em;
+}
+main #scene .card[data-value="3"]::before {
+  background-position: 0em 12em;
+}
+main #scene .card[data-value="4"]::before {
+  background-position: 0em 16em;
+}
+main #scene .card[data-value="5"]::before {
+  background-position: 0em 20em;
+}
+main #scene .card[data-value="6"]::before {
+  background-position: 0em 24em;
+}
+main #scene .card[data-value="7"]::before {
+  background-position: 0em 28em;
+}
+main #scene .card[data-value="8"]::before {
+  background-position: 0em 32em;
+}
+main #scene .card[data-value="9"]::before {
+  background-position: 0em 36em;
+}
+main #scene .card[data-value="10"]::before {
+  background-position: 0em 40em;
+}
+main #scene .card[data-value="11"]::before {
+  background-position: 0em 44em;
+}
+
+/*# sourceMappingURL=main.css.map */

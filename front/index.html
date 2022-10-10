@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway&family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./css/main.css">
+        <script src="./js/timer.js" defer></script>
+        <script src="./js/game.js" defer></script>
+        <script src="./js/card.js" defer></script>
+        <script src="./js/score.js" defer></script>
+        <script src="./js/index.js" defer></script>
+    </head>
+    <body>
+        <main>
+            <div class="buttons">
+                <button id="button_restart">Nouvelle partie</button>
+                <button id="button_cancel">Abandonner</button>
+            </div>
+            <div id="timer">
+                <div id="timer__bar"></div>
+            </div>
+            <div id="scene"></div>
+            <div id="time">
+                <h1>Top 10</h1>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Temps</th>
+                        </tr>
+                    </thead>
+                    <tbody id="time__body">
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </body>
+</html>

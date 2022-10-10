@@ -1,0 +1,130 @@
+@keyframes flip-cover {
+    0%{
+    }
+
+    100%{
+        transform: rotateY(90deg);
+    }
+}
+
+
+@keyframes flip-card {
+    0%{
+    }
+
+    100%{
+        transform: rotateY(0deg);
+    }
+}
+
+*{
+    font-family: 'Roboto';
+}
+
+main{
+    button{
+        cursor: pointer;
+        
+    }
+    #time{
+        text-align: center;
+        width: 29em;
+        background-color: rgb(230, 172, 255);
+        h1{
+            padding: .5em;
+        }
+
+        table{
+            width: 100%;
+            thead{
+                th{
+                    td{
+                        text-align: center;
+                        padding: .5em;
+                    }
+                }
+            }
+            
+            tbody{
+                tr{
+                    td{
+                        text-align: center;
+                        padding: .5em;
+                    }
+                }
+            }
+        }
+    }
+
+    #timer{
+        width: 29em;
+        height: 2em;
+        margin: 1em 0;
+        background-color: #cecece;
+
+        &__bar{
+            height: 2em;
+            width: 0%;
+            background-color: red;
+        }
+    }
+
+
+    #scene{
+        display: flex;
+        flex-flow: row wrap;
+        width: 27em;
+        gap: .5em;
+        background-color: #dddcfc;
+        padding: 1em;
+        justify-content: space-between;
+
+        .card{
+            position: relative;
+            width: 4em;
+            height: 4em;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &:before{
+                content:"";
+                width: 4em;
+                height: 4em;
+                position: absolute;
+                transform: rotateY(90deg);
+                background-size: 100% auto;
+                background-image: url(../img/cards.png);
+            }
+            
+            &:after{
+                content: "";
+                width: 4em;
+                height: 4em;
+                position: absolute;
+                background-color: #848484;
+            }
+
+            &.flip{
+                &hover{
+
+                }
+                
+                &:before{
+                    animation: flip-card 1s forwards 0.5s ;
+                }
+                
+                &:after{
+                    animation: flip-cover .5s forwards;
+                }
+            }
+
+            @for $i from 0 through 11{
+                &[data-value="#{$i}"]::before{
+                    background-position: 0em #{$i * 4}em;
+                }
+            }
+        }
+    }
+}
