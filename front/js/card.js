@@ -92,7 +92,7 @@ class Card{
                     else{
                         /*
                             Les deux cartes ne sont pas identiques
-                            On retournent ces dernières et on efface la mémoire du game.getLastUnflippedCard()
+                            On retourne ces dernières et on efface la mémoire du game.getLastUnflippedCard()
                         */
                         Card.unflip(game.getLastUnflippedCard())
                         Card.unflip(value)
