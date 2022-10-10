@@ -21,7 +21,7 @@ Clonez le repository
 L'application est livrée avec un démarrage via docker
 
 ```bash
-  cd /deploy
+  cd ./deploy
 ```  
 et  
 ```bash
