@@ -100,7 +100,7 @@ class Game{
         })
     }
 
-    //Permets de lancer une nouvelle partie
+    //Permet de lancer une nouvelle partie
     start(){
         //si une partie est déjà lancée, on l'a stop
         this.stop()
@@ -112,7 +112,7 @@ class Game{
         this.#timer.start()
     }
 
-    //Permets de stopper la partie en cours
+    //Permet de stopper la partie en cours
     stop(){
         //on donne la main au joueur
         this.#canPlay = false
