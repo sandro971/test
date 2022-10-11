@@ -26,7 +26,7 @@ class Game{
         Nous n'avons besoin que d'une seul instance de Game.
         Elle pourra être appelée partout dans le code à l'aide de la méthode static getInstance()
     */
-    static #__instance = null;
+    static __instance = null;
 
     static getInstance(){
         if(!Game.__instance){
