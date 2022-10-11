@@ -1,5 +1,5 @@
 class Timer{
-    //elements du DOM modifiables
+    //éléments du DOM modifiables
     #ui = {
         timer: document.getElementById('timer'),
         timer_bar: document.getElementById('timer__bar')
@@ -50,7 +50,7 @@ class Timer{
     clear(){
         //on stop le timer
         this.stop()
-        //on ramène la bar de chargement à 0%
+        //on ramène la barre de chargement à 0%
         this.#ui.timer_bar.style.width = 0
         //on réinitialise le timer
         this.#value = 0

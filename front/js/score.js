@@ -16,7 +16,7 @@ class Score{
                 //on efface le tableau
                 time_body.innerHTML = ''
 
-                //on insert chaque resultat sous forme d'HTML
+                //on insère chaque résultat sous forme d'HTML
                 data.forEach(function(result){
                     time_body.innerHTML +=`
                         <tr>
@@ -30,14 +30,14 @@ class Score{
 
     static save(time){
         /*
-            On affiche une boite de dialogue pour récupérer le nom du gagnant
+            On affiche une boîte de dialogue pour récupérer le nom du gagnant
             par défaut, AAA
         */
         let name = prompt('Entrer votre nom', 'AAA')
         
         /*
             L'envoie des données se fait au format JSON
-            Pour cela, on utilise le paramètres 'application/json' dans le content-type
+            Pour cela, on utilise le paramètre 'application/json' dans le content-type
             et on transforme nos données à l'aide JSON.stringify
         */
         return fetch('http://localhost/time', {
@@ -50,7 +50,7 @@ class Score{
             })
         })
         .then(function(res){
-            //on rafraichie le tableau des scores
+            //on rafraichit le tableau des scores
             Score.getAll()
         })
     }

@@ -1,4 +1,4 @@
-//Répertorie les différents état de la partie
+//Répertorie les différents états de la partie
 const GAME_STATE = {
     WIN: 1,
     LOOSE: 0,
@@ -23,7 +23,7 @@ class Game{
 
     /*
         Pattern Singleton
-        Nous n'avons besoin que d'une seul instance de Game.
+        Nous n'avons besoin que d'une seule instance de Game.
         Elle pourra être appelée partout dans le code à l'aide de la méthode static getInstance()
     */
     static __instance = null;
@@ -79,7 +79,7 @@ class Game{
             `.card:not(.flip)`
         ).length != 0
         
-        //si il reste des cartes à jouer, on continue
+        //S'il reste des cartes à jouer, on continue
         if(hasUnflippedCards){
             return GAME_STATE.PLAY
         }
@@ -89,7 +89,7 @@ class Game{
     }
 
 
-    //distribue les cartes pour une nouvelle partie
+    //Distribue les cartes pour une nouvelle partie
     dispatchCards(){
         //on supprime les précédentes cartes
         this.#ui.scene.innerHTML = ''
@@ -100,9 +100,9 @@ class Game{
         })
     }
 
-    //permet de lancer une nouvelle partie
+    //Permets de lancer une nouvelle partie
     start(){
-        //si une partie est déjà lancée, on la stop
+        //si une partie est déjà lancée, on l'a stop
         this.stop()
 
         //on donne la main au joueur
@@ -112,20 +112,20 @@ class Game{
         this.#timer.start()
     }
 
-    //permet de stopper la partie en cours
+    //Permets de stopper la partie en cours
     stop(){
         //on donne la main au joueur
         this.#canPlay = false
 
-        //on distribue de nouvelle cartes pour effacer la partie
+        //on distribue de nouvelles cartes pour effacer la partie
         this.dispatchCards()
 
         //on stop et efface toutes les données du timer
         this.#timer.clear()
     }
 
-    //affiche un message de game over
-    //si la partie est gagné, sauvegarde le temps du joueur
+    //Affiche un message de game over
+    //Si la partie est gagnée, sauvegarde le temps du joueur
     showGameOverMessage(hasWin){
         //le joueur n'a plus la main
         this.#canPlay = false

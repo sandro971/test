@@ -3,7 +3,7 @@ class Card{
     constructor(){
     }
     
-    //permet de masquer toutes les cartes ayant la valeur donnée
+    //Permets de masquer toutes les cartes ayant la valeur donnée
     static unflip(value){
         //on récupère la carte face recto aillant la même valeur
         let $card = document.querySelector(
@@ -14,7 +14,7 @@ class Card{
         $card.classList.remove('flip')
     }
 
-    //transforme une valeur en élément html
+    //transforme une valeur en éléments html
     static render(value){
         //On récupère l'instance du jeu
         let game = Game.getInstance()
@@ -50,7 +50,7 @@ class Card{
             //retourne la carte sélectionnée
             $card.classList.add('flip')
 
-            //on décale les vérifications au moment ou l'animation se termine
+            //on décale les vérifications au moment où l'animation se termine
             setTimeout(()=>{
                 // si c'est la 2nd carte de la paire qu'on teste
                 if(game.getLastUnflippedCard()){
@@ -76,13 +76,13 @@ class Card{
                                 showGameOverMessage( true : a gagné, false: a perdu)
                             */
                             
-                            //si la partie est perdu, on affiche un message
+                            //si la partie est perdue, on affiche un message
                             case GAME_STATE.LOOSE:
                                 game.setCanPlay(false)
                                 game.showGameOverMessage(false)
                                 break
                             
-                            //si la partie est perdu, on affiche un message
+                            //si la partie est gagnée, on affiche un message
                             case GAME_STATE.WIN:
                                 game.setCanPlay(false)
                                 game.showGameOverMessage(true)
@@ -120,7 +120,7 @@ class Card{
     static getDeck(){
         /*
             La variable `cards` contient une liste de valeurs représentants chacune une carte
-            Chaques valeurs arrivent par paire
+            Chaque valeur arrive par paire
         */
         var cards = [0,0,1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11]
 
