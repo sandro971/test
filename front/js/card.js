@@ -3,7 +3,7 @@ class Card{
     constructor(){
     }
     
-    //Permets de masquer toutes les cartes ayant la valeur donnée
+    //Permet de masquer toutes les cartes ayant la valeur donnée
     static unflip(value){
         //on récupère la carte face recto aillant la même valeur
         let $card = document.querySelector(
